@@ -1,3 +1,5 @@
+
+
 if game:GetService("RunService"):IsStudio() == true then
 	function gethui() return game:GetService("Players").LocalPlayer.PlayerGui end
 	function cloneref(a) return a end
@@ -234,7 +236,7 @@ do
 								v.OuterHealthBar.Size = UDim2.new(0, 3, 0, v.FilledBox.Size.Y.Offset+1)
 								if SettingsTable.GeneralSettings.IgnoreHumanoid == false then
 									v.InnerHealthBar.Position = UDim2.new(0,0,1,0)
-									v.InnerHealthBar.Size = UDim2.new(1,0,math.clamp(Model.Humanoid.Health / Model.Humanoid.MaxHealth, 0, 1),0)
+									v.InnerHealthBar.Size = UDim2.new(1,0,1,0)
 								else
 									v.InnerHealthBar.Position = UDim2.new(0,0,1,0)
 									v.InnerHealthBar.Size = UDim2.new(1,0,1,0)
@@ -252,12 +254,12 @@ do
 									v.HealthText.Position = UDim2.new(0, v.FilledBox.Position.X.Offset - (v.HealthText.TextBounds.X / 2) - 3, 0,  v.FilledBox.Position.Y.Offset)
 								end
 								if SettingsTable.GeneralSettings.IgnoreHumanoid == false then
-									v.HealthText.Text = math.floor(Model.Humanoid.Health)
+									v.HealthText.Text = 100
 								else
 									v.HealthText.Text = 100
 								end
 								if SettingsTable.HealthText.UseHealthColor == true then
-									v.HealthText.TextColor3 = Color3.fromHSV(math.clamp(Model.Humanoid.Health / Model.Humanoid.MaxHealth, 0, 1) * 0.33, 1, 1)
+									v.HealthText.TextColor3 = SettingsTable.HealthText.Color
 								else
 									v.HealthText.TextColor3 = SettingsTable.HealthText.Color
 								end
